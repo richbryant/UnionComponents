@@ -1,0 +1,14 @@
+﻿@typeparam TValue
+@OptionValue.Match(Some: x => Some, None: () => None)
+
+@code
+{
+    [Parameter]
+    public LanguageExt.Option<TValue> OptionValue { get; set; }
+
+    [Parameter]
+    public RenderFragment Some { get; set; }
+
+    [Parameter]
+    public RenderFragment None { get; set; }
+}

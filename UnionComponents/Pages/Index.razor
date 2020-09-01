@@ -2,25 +2,25 @@
 
 <h3>OptionalValue</h3>
 
-<StringOption ContentValue="Hello">
+<Option OptionValue="@textValue" TValue="String">
     <Some>
-        <p>@Hello</p>
+        <p>@textValue</p>
     </Some>
     <None>
         <p>wait for it.....</p>
     </None>
-</StringOption>
+</Option>
 
 @code {
 
-    string Hello;
+    string textValue;
     
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
         if (firstRender)
         {
             await Task.Delay(3000);
-            Hello = "Hello!";
+            textValue = "Hello!";
             await InvokeAsync(StateHasChanged);
         }
     }
