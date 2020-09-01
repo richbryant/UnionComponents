@@ -6,7 +6,7 @@
 
 <StringOption ContentValue="Hello">
     <Some>
-        <p>Hello!</p>
+        <p>@Hello</p>
     </Some>
     <None>
         <p>wait for it.....</p>
@@ -15,14 +15,14 @@
 
 @code {
 
-    Option<string> Hello;
-
+    string Hello;
+    
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
         if (firstRender)
         {
             await Task.Delay(3000);
-            Hello = Some("Hello!");
+            Hello = "Hello!";
             await InvokeAsync(StateHasChanged);
         }
     }
