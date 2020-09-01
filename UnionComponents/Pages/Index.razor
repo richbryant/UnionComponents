@@ -1,0 +1,23 @@
+﻿@page "/"
+@using LanguageExt
+@using static LanguageExt.Prelude
+
+<h3>OptionalValue</h3>
+
+@Hello.Match(Some: x => x, None: () => "wait for it")
+
+@code {
+
+    Option<string> Hello;
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await Task.Delay(3000);
+            Hello = Some("Hello!");
+            await InvokeAsync(StateHasChanged);
+        }
+    }
+
+}
