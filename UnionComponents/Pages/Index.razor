@@ -4,7 +4,14 @@
 
 <h3>OptionalValue</h3>
 
-@Hello.Match(Some: x => x, None: () => "wait for it")
+<StringOption ContentValue="Hello">
+    <Some>
+        <p>Hello!</p>
+    </Some>
+    <None>
+        <p>wait for it.....</p>
+    </None>
+</StringOption>
 
 @code {
 
